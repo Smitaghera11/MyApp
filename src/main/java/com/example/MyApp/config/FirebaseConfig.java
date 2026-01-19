@@ -43,7 +43,10 @@ import com.google.firebase.FirebaseOptions;
 import org.springframework.context.annotation.Configuration;
 
 import jakarta.annotation.PostConstruct;
+
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 @Configuration
 public class FirebaseConfig {
@@ -52,8 +55,9 @@ public class FirebaseConfig {
     public void initialize() {
         try {
             InputStream serviceAccount =
-                    getClass().getClassLoader()
-                            .getResourceAsStream("firebase/firebase-service-account.json");
+                    new ByteArrayInputStream(
+                        System.getenv("FIREBASE_KEY").getBytes(StandardCharsets.UTF_8)
+                    );
 
             if (serviceAccount == null) {
                 throw new RuntimeException("Firebase service account file not found");
