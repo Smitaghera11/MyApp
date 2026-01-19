@@ -1,0 +1,428 @@
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | My App</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Modern Glassmorphism Navbar */
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        /* Enhanced Card Design */
+        .dashboard-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-custom {
+            background-color: var(--accent-color);
+            color: #0f172a;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 0.6rem 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .btn-custom:hover {
+            background-color: #7dd3fc;
+            transform: scale(1.02);
+        }
+
+        .welcome-emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark sticky-top">
+    <div class="container-fluid">
+        <span class="navbar-brand">
+            <img src="/images/logo.ico" alt="My App Logo" width="70" height="30" class="d-inline-block align-text-top">
+        </span>
+        <div class="d-flex align-items-center">
+            <span class="text-secondary me-3 d-none d-sm-inline">Logged in as User</span>
+            <a href="/login" class="btn btn-sm btn-outline-danger">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="dashboard-card p-5 text-center shadow-lg">
+                <span class="welcome-emoji">✨</span>
+                <h1 class="display-6 fw-bold mb-3">Welcome Back!</h1>
+                <p class="text-secondary mb-4">
+                    You've successfully authenticated. Everything looks good and you're ready to start.
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button class="btn btn-custom">View Profile</button>
+                    <button class="btn btn-outline-secondary">Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="mt-auto py-4 text-center text-secondary small">
+    &copy; 2024 My App Inc.
+</footer>
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Service Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-promo { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .category-card { transition: transform 0.3s; }
+        .category-card:hover { transform: scale(1.05); }
+        .near-you-card img { height: 200px; object-fit: cover; }
+        @media (max-width: 991px) { .desktop-only { display: none; } } 
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light sticky-top py-2 shadow-sm">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                <span class="fw-bold">My Location, St</span>
+                <form class="ms-auto d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search services..." aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-promo py-5 px-4 text-center position-relative overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">30% Off Deals</h1>
+                    <p class="lead mb-4">Get discount for every order</p>
+                    <a href="#" class="btn btn-light btn-lg px-5">Order Now</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/500x400/FF6B6B/FFFFFF?text=Hero+Image+(Woman)" 
+                         class="img-fluid rounded shadow-lg" alt="Promo Model">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Select Category <span class="badge bg-primary ms-2">View all</span></h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card category-card h-100 text-center border-0 shadow">
+                        <img src="https://via.placeholder.com/300x200/4ECDC4/FFFFFF?text=AC+Service" class="card-img-top" alt="AC Service">
+                        <div class="card-body">
+                            <h5 class="card-title">AC Service</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card category-card h-100 text-center border-0 shadow">
+                        <img src="https://via.placeholder.com/300x200/45B7D1/FFFFFF?text=Beauty" class="card-img-top" alt="Beauty">
+                        <div class="card-body">
+                            <h5 class="card-title">Beauty</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card category-card h-100 text-center border-0 shadow">
+                        <img src="https://via.placeholder.com/300x200/96CEB4/FFFFFF?text=Cleaning" class="card-img-top" alt="Cleaning">
+                        <div class="card-body">
+                            <h5 class="card-title">Cleaning</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card category-card h-100 text-center border-0 shadow">
+                        <img src="https://via.placeholder.com/300x200/F7DC6F/FFFFFF?text=Shifting" class="card-img-top" alt="Shifting">
+                        <div class="card-body">
+                            <h5 class="card-title">Shifting</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-5">Near for you <span class="badge bg-primary ms-2">View all</span></h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow border-0 overflow-hidden">
+                        <img src="https://via.placeholder.com/800x200/3498DB/FFFFFF?text=Washing+Services+Dummy" class="card-img-top" alt="Washing Services">
+                        <div class="card-body">
+                            <h5 class="card-title">Washing Services Dummy</h5>
+                            <p class="text-muted">₹60</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow border-0 overflow-hidden">
+                        <img src="https://via.placeholder.com/800x200/E74C3C/FFFFFF?text=Items+Shooting" class="card-img-top" alt="Items Shooting">
+                        <div class="card-body">
+                            <h5 class="card-title">Items Shooting</h5>
+                            <p class="text-muted">₹60</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Pro - Responsive Home</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fbff; }
+        /* Smooth horizontal scroll for mobile, grid for desktop */
+        .scroll-container::-webkit-scrollbar { display: none; }
+        .promo-gradient { background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <nav class="hidden md:flex bg-white border-b border-gray-100 py-4 px-10 sticky top-0 z-50 justify-between items-center shadow-sm">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-[#007bff] rounded-lg flex items-center justify-center text-white">
+                <i data-lucide="wrench" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xl font-bold text-[#007bff]">ServicePro</span>
+        </div>
+        <div class="flex space-x-8 font-medium text-gray-600">
+            <a href="#" class="text-[#007bff]">Home</a>
+            <a href="#" class="hover:text-[#007bff]">Categories</a>
+            <a href="#" class="hover:text-[#007bff]">Bookings</a>
+            <a href="#" class="hover:text-[#007bff]">Profile</a>
+        </div>
+        <div class="flex items-center space-x-4">
+             <i data-lucide="search" class="w-5 h-5 cursor-pointer"></i>
+             <i data-lucide="bell" class="w-5 h-5 cursor-pointer"></i>
+             <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden border border-gray-300">
+                 <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100" alt="user">
+             </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
+        
+        <header class="flex md:hidden items-center justify-between mb-8">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-[#007bff] rounded-full flex items-center justify-center text-white shadow-lg">
+                    <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-400">My Location</p>
+                    <p class="text-sm font-bold">Peitersburg, St</p>
+                </div>
+            </div>
+            <div class="flex space-x-2">
+                <button class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center">
+                    <i data-lucide="search" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center">
+                    <i data-lucide="bell" class="w-5 h-5 text-gray-600"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <div class="lg:col-span-8 space-y-10">
+                
+                <section class="promo-gradient rounded-[30px] md:rounded-[40px] p-8 md:p-12 relative overflow-hidden text-white flex items-center min-h-[220px] md:min-h-[300px]">
+                    <div class="w-full md:w-1/2 z-10">
+                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">30% Off<br>Special Deals</h2>
+                        <p class="text-sm md:text-lg mt-4 opacity-90">Get high-quality service at the best price.</p>
+                        <button class="mt-6 bg-white text-[#007bff] px-8 py-3 rounded-full font-bold shadow-xl hover:scale-105 transition-transform">Order Now</button>
+                    </div>
+                    <img src="https://png.pngtree.com/png-vector/20230830/ourmid/pngtree-3d-character-pointing-to-right-pose-png-image_9190018.png" 
+                         class="absolute right-[-20px] bottom-0 w-1/2 h-full object-cover hidden md:block" alt="promo">
+                </section>
+
+                <section>
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-bold text-xl md:text-2xl">Select Category</h3>
+                        <a href="#" class="text-[#007bff] font-semibold hover:underline">View all</a>
+                    </div>
+                    <div class="grid grid-cols-4 md:grid-cols-6 gap-4 md:gap-8">
+                        <div class="group cursor-pointer text-center">
+                            <div class="overflow-hidden rounded-2xl mb-2"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=200" class="group-hover:scale-110 transition-transform"></div>
+                            <p class="text-xs font-bold text-gray-700">AC Service</p>
+                        </div>
+                        <div class="group cursor-pointer text-center">
+                            <div class="overflow-hidden rounded-2xl mb-2"><img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=200" class="group-hover:scale-110 transition-transform"></div>
+                            <p class="text-xs font-bold text-gray-700">Beauty</p>
+                        </div>
+                        <div class="group cursor-pointer text-center">
+                            <div class="overflow-hidden rounded-2xl mb-2"><img src="data:image/jpeg;base64,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" class="group-hover:scale-110 transition-transform"></div>
+                            <p class="text-xs font-bold text-gray-700">Cleaning</p>
+                        </div>
+                        <div class="group cursor-pointer text-center">
+                            <div class="overflow-hidden rounded-2xl mb-2"><img src="https://images.unsplash.com/photo-1600585154526-990dcea464f9?w=200" class="group-hover:scale-110 transition-transform"></div>
+                            <p class="text-xs font-bold text-gray-700">Shifting</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="lg:col-span-4">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-bold text-xl">Near for you</h3>
+                    <a href="#" class="text-[#007bff] font-semibold">View all</a>
+                </div>
+                
+                <div class="flex lg:flex-col space-x-4 lg:space-x-0 lg:space-y-6 overflow-x-auto lg:overflow-visible scroll-container pb-4">
+                    <div class="min-w-[280px] md:min-w-full bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold text-lg">Cleaning Services</h4>
+                                <span class="text-[#007bff] font-extrabold text-lg">$60</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mt-2">Professional cleaning with certified equipment.</p>
+                            <button class="mt-4 w-full border border-[#007bff] text-[#007bff] py-2 rounded-xl font-bold hover:bg-[#007bff] hover:text-white transition-colors">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="min-w-[280px] md:min-w-full bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dcea464f9?w=600" class="w-full h-40 object-cover">
+                        <div class="p-5">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold text-lg">Items Shifting</h4>
+                                <span class="text-[#007bff] font-extrabold text-lg">$120</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mt-2">Safe and secure home shifting services.</p>
+                            <button class="mt-4 w-full border border-[#007bff] text-[#007bff] py-2 rounded-xl font-bold hover:bg-[#007bff] hover:text-white transition-colors">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around py-4 shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-50">
+        <div class="flex flex-col items-center text-[#007bff]">
+            <i data-lucide="home" class="w-6 h-6"></i>
+            <span class="text-[10px] mt-1 font-bold">Home</span>
+            <div class="w-1.5 h-1.5 bg-[#007bff] rounded-full mt-1"></div>
+        </div>
+        <i data-lucide="layout-grid" class="w-6 h-6 text-gray-300"></i>
+        <i data-lucide="calendar" class="w-6 h-6 text-gray-300"></i>
+        <i data-lucide="user" class="w-6 h-6 text-gray-300"></i>
+    </nav>
+
+    <script>
+        lucide.createIcons();
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log("App Ready"));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Verify OTP</title>
+</head>
+<body style="font-family: Arial; text-align:center; margin-top:100px;">
+
+    <h2>OTP Verification</h2>
+
+    <p>Check your email and enter the OTP</p>
+
+    <form th:action="@{/verifyOtp}" method="post">
+        <input type="text" name="otp" placeholder="Enter OTP" required />
+        <br><br>
+        <button type="submit">Verify OTP</button>
+    </form>
+
+    <p th:if="${error}" style="color:red;" th:text="${error}"></p>
+
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+
+        .otp-input {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #f9fafb;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .otp-input:focus {
+            border-color: #007bff;
+            background: white;
+            box-shadow: 0 0 0 2px #dbeafe;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 flex justify-center items-center min-h-screen p-4">
+
+<div class="bg-white w-full max-w-md p-8 md:rounded-[40px] shadow-2xl flex flex-col min-h-[600px]">
+
+    <!-- BACK -->
+    <a th:href="@{/signup}" class="text-blue-500 font-medium mb-6 inline-block">
+        ← Back
+    </a>
+
+    <!-- TITLE -->
+    <div class="mt-4">
+        <h1 class="text-3xl font-bold text-gray-900">Enter OTP</h1>
+        <p class="text-gray-500 mt-4 leading-relaxed">
+            We've sent a 6-digit code to your email. Please enter it below.
+        </p>
+    </div>
+
+    <!-- ERROR MESSAGE -->
+    <div th:if="${error}"
+         class="mt-6 bg-red-100 text-red-600 text-sm p-3 rounded-lg text-center">
+        <span th:text="${error}">Invalid OTP</span>
+    </div>
+
+    <!-- OTP FORM -->
+    <form th:action="@{/verifyOtp}" method="post" class="mt-12 space-y-10">
+
+        <!-- OTP INPUTS (6 DIGITS) -->
+        <div class="flex justify-between max-w-sm mx-auto">
+            <input type="text" maxlength="1" class="otp-input" oninput="moveNext(this)">
+            <input type="text" maxlength="1" class="otp-input" oninput="moveNext(this)">
+            <input type="text" maxlength="1" class="otp-input" oninput="moveNext(this)">
+            <input type="text" maxlength="1" class="otp-input" oninput="moveNext(this)">
+            <input type="text" maxlength="1" class="otp-input" oninput="moveNext(this)">
+            <input type="text" maxlength="1" class="otp-input" oninput="moveNext(this)">
+        </div>
+
+        <!-- HIDDEN OTP FIELD -->
+        <input type="hidden" name="otp" id="otpValue">
+
+        <!-- RESEND -->
+        <div class="text-center">
+            <p class="text-sm text-gray-500">
+                Didn't receive a code?
+                <a th:href="@{/resendOtp}" class="text-blue-500 font-semibold">
+                    Resend
+                </a>
+            </p>
+        </div>
+
+        <!-- SUBMIT -->
+        <button type="submit"
+                class="w-full bg-[#007bff] text-white py-4 rounded-3xl font-bold text-lg shadow-lg active:scale-95 transition-transform">
+            Verify
+        </button>
+    </form>
+</div>
+
+<!-- OTP SCRIPT -->
+<script>
+    function moveNext(input) {
+        if (input.value.length === 1) {
+            const next = input.nextElementSibling;
+            if (next && next.classList.contains("otp-input")) {
+                next.focus();
+            }
+        }
+
+        let otp = "";
+        document.querySelectorAll(".otp-input").forEach(el => otp += el.value);
+        document.getElementById("otpValue").value = otp;
+    }
+</script>
+
+</body>
+</html>
