@@ -60,55 +60,28 @@ public class PageController {
     public String doLogin(
             @RequestParam String email,
             @RequestParam String password,
-            Model model
-    ) throws InterruptedException {
+            Model model) {
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
+        try {
+            // TEMP TEST (VERY IMPORTANT)
+            System.out.println("Login attempt: " + email);
 
-        final boolean[] loginSuccess = {false};
-        final CountDownLatch latch = new CountDownLatch(1);
+            // 👉 TEMP: SKIP FIREBASE (to confirm dashboard works)
+            model.addAttribute("email", email);
+            return "dashboard";
 
-        ref.orderByChild("email").equalTo(email)
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-
-                        if (snapshot.exists()) {
-                            for (DataSnapshot userSnapshot : snapshot.getChildren()) {
-                                User user = userSnapshot.getValue(User.class);
-
-                                if (user != null && user.getPassword().equals(password)) {
-                                    loginSuccess[0] = true;
-                                    break;
-                                }
-                            }
-                        }
-
-                        latch.countDown(); // Firebase finished
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError error) {
-                        latch.countDown();
-                    }
-                });
-
-        // ⏳ WAIT for Firebase result
-        latch.await();
-
-        if (loginSuccess[0]) {
-            return "redirect:/dashboard";
-        } else {
-            model.addAttribute("error", "Invalid email or password");
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("error", "Login failed");
             return "login";
         }
     }
 
 
 
+
     @GetMapping("/dashboard")
-    public String dashboardPage() {
+    public String dashboard() {
         return "dashboard";
     }
 }
