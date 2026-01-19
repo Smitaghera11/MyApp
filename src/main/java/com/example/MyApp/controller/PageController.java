@@ -28,6 +28,18 @@ public class PageController {
         return "login";
     }
 
+    @PostMapping("/login")
+    public String doLogin() {
+        try {
+            // your login logic
+            return "dashboard";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "login";
+        }
+    }
+
+
     @PostMapping("/doSignup")
     public String doSignup(
             @RequestParam String name,
@@ -97,6 +109,6 @@ public class PageController {
 
     @GetMapping("/dashboard")
     public String dashboardPage() {
-        return "/dashboard";
+        return "dashboard";
     }
 }
